@@ -7,34 +7,25 @@ from PIL import Image
 
 
 driver = webdriver.Chrome()
-driver.maximize_window()
 # 访问测试注册网站
 driver.get('http://www.5itest.cn/register')
-time.sleep(5)
+time.sleep(2)
 # 判断是否是注册页面
 print(EC.title_contains("注册"))
-driver.save_screenshot("/Users/yangchao/Desktop/乐学/img.png")
-# 定位验证码
-code_elemet = driver.find_element_by_id("getcode_num")
-# 获取验证码的坐标
-location = code_elemet.location
-print(location)
-# 获取验证码的图片大小
-size = code_elemet.size
-print(size)
+driver.save_screenshot("/Users/yangchao/Desktop/乐学/img.png") # 保存网页截图
+code_element = driver.find_element_by_xpath("//*[@id='getcode_num']")    # 定位验证码
+print(code_element.location)     # 获取验证码的图片大小
 
-# 横坐标
-left = code_elemet.location['x']
-# 竖坐标
-top = code_elemet.location['y']
+left = code_element.location['x']    # 横坐标
+top = code_element.location['y']     # 竖坐标
+right = code_element.size['width']+left
+height = code_element.size["height"]+top
 
-right = code_elemet.size['width']+left
-height = code_elemet.size['height']+top
 im = Image.open("/Users/yangchao/Desktop/乐学/img.png")
-img = im.crop((left,top, right, height))
-img.save("/Users/yangchao/Desktop/乐学/img1.png")
 
+img = im.crop((left, top, right, height))
 
+img.save("/Users/yangchao/Desktop/乐学/img副本.png")
 
 email_element = driver.find_element_by_id("register_email")
 email = ['qq','163','gmail']
@@ -42,7 +33,7 @@ for i in range(5):
     for j in email:
         user_email =''.join(random.sample('1234567890abcdefg', 5))+"@"+j+'.com'
         print(user_email)
-email_element.send_keys(user_email([1]))
+email_element.send_keys(user_email)
 print(email_element.get_attribute("value"))
 
 # 找到用户名
