@@ -7,4 +7,4 @@ r.addBodyPara("typeId", "35")
 r.addBodyPara("convert_to_jpg", "0")
 r.addBodyPara("needMorePrecise", "0")
 res = r.post()
-print(res.text) # 返回信息
+print(res.text)     #  返回信息
