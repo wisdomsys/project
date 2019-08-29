@@ -49,7 +49,7 @@ def code_online(file_name):
 def run_main():
     user_name_info = get_range_user()
     user_email = user_name_info+"@163.com"
-    file_name = "/Users/yangchao/Desktop/乐学/code.png"
+    file_name = "/Users/joseph/Desktop/乐学/code.png"
     driver_init()
     get_element("register_email").send_keys(user_email)
     get_element("register_nickname").send_keys(user_name_info)
