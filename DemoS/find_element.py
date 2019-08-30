@@ -1,10 +1,10 @@
 from until.read_ini import ReadIni
 
 class FindElement(object):
-    def __init__(self,driver):
+    def __init__(self, driver):
         self.driver = driver
 
-    def get_element(self,key):
+    def get_element(self, key):
         read_ini = ReadIni()
         data = read_ini.get_value(key)
         by = data.split('>')[0]

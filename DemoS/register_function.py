@@ -67,3 +67,7 @@ class RegisterFunction(object):
         self.get_user_element("register_button").click()
         time.sleep(5)
         self.driver.close()
+
+if __name__ == '__main__':
+    register_function = RegisterFunction('http://www.5itest.cn/register')
+    register_function.main()
