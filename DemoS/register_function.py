@@ -2,7 +2,7 @@ from selenium import webdriver
 import random
 from PIL import Image
 from ShowapiRequest import ShowapiRequest
-from DemoS.find_element import FindElement
+from base.find_element import FindElement
 import time
 
 class RegisterFunction(object):
