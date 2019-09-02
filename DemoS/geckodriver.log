@@ -1,0 +1,36 @@
+1567393559233	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/90/rs59g16j5tjfq09b1264m0sc0000gn/T/rust_mozprofile.xoSFOCTC67yr"
+1567393560203	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1567393560203	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1567393560203	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1567393560203	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1567393561954	Marionette	INFO	Listening on port 60870
+1567393589616	Marionette	INFO	Stopped listening on port 60870
+1567393892902	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/90/rs59g16j5tjfq09b1264m0sc0000gn/T/rust_mozprofile.YgAvJzLrO9BW"
+1567393893370	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1567393893370	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1567393893371	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1567393893371	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1567393894909	Marionette	INFO	Listening on port 61526
+1567393894980	Marionette	WARN	TLS certificate errors will be ignored for this session
+1567393914657	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:223:64
+send@http://www.5itest.cn/static-dist/libs/vendor.js?8.0.16:7:14661
+ajax@http://www.5itest.cn/static-dist/libs/vendor.js?8.0.16:7:11361
+e08e353dfaa39855b303/<@http://www.5itest.cn/static-dist/libs/jquery-validation.js?8.0.16:1:10833
+check@http://www.5itest.cn/static-dist/libs/jquery-validation.js?8.0.16:1:22714
+checkForm@http://www.5itest.cn/static-dist/libs/jquery-validation.js?8.0.16:1:18743
+form@http://www.5itest.cn/static-dist/libs/jquery-validation.js?8.0.16:1:18443
+validate/<@http://www.5itest.cn/static-dist/libs/jquery-validation.js?8.0.16:1:12987
+dispatch@http://www.5itest.cn/static-dist/libs/vendor.js?8.0.16:6:9534
+add/v.handle@http://www.5itest.cn/static-dist/libs/vendor.js?8.0.16:6:6236
+event.synthesizeMouseAtPoint@chrome://marionette/content/event.js:202:14
+webdriverClickElement@chrome://marionette/content/interaction.js:183:11
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221567199562295%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:201:13
+
+1567393921117	Marionette	INFO	Stopped listening on port 61526
