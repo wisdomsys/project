@@ -1,5 +1,7 @@
 from until.read_ini import ReadIni
 
+
+# 读取配置文件信息
 class FindElement(object):
     def __init__(self, driver):
         self.driver = driver
