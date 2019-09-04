@@ -1,6 +1,6 @@
 from until.read_ini import ReadIni
 
-
+# 主要是根据配置文件内的元素定位信息判断是id & class等定位方式
 # 读取配置文件信息
 class FindElement(object):
     def __init__(self, driver):

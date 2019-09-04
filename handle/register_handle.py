@@ -1,3 +1,4 @@
+# coding=utf-8
 from page.register_page import RegisterPage
 
 
@@ -24,16 +25,20 @@ class RegisterHandle(object):
     def send_user_code(self, code):
         self.register_p.get_code_element().send_keys(code)
 
-    # 获取文字信息
-    def get_user_text(self, info, user_info):
-        if info == "email_error":
-            text = self.register_p.get_code_error_element().getattribute("value")
-        elif info == "name_error":
-            text = self.register_p.get_name_error_element().getattribute("value")
+    # 获取报错信息
+    def get_user_text(self, info):
+        if info == "user_email_error":
+            text = self.register_p.get_email_error_element().get_attribute('value')
+            print(text)
+        elif info == "user_name_error":
+            text = self.register_p.get_name_error_element().get_attribute('value')
+            print(text)
         elif info == "password_error":
-            text = self.register_p.get_password_error_element().getattribute("value")
+            text = self.register_p.get_password_error_element().get_attribute('value')
+            print(text)
         else:
-            text = self.register_p.get_code_error_element().getattribute("value")
+            text = self.register_p.get_code_error_element().get_attribute('value')
+            print(text)
         return text
 
     # 点击注册按钮
@@ -42,4 +47,4 @@ class RegisterHandle(object):
 
     # 获取注册按钮
     def get_register_text(self):
-        return self.register_p.get_button_element().text()
+        return self.register_p.get_button_element().get_attribute("value")
