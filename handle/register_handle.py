@@ -33,8 +33,8 @@ class RegisterHandle(object):
             text = self.register_page.get_username_error_info().send_keys("value")
         elif info == "register_password_error":
             text = self.register_page.get_password_error_info().send_keys("value")
-        elif info == "captcha_code_error":
-            text = self.register_page.get_code_error_info().send_keys("value")
+        # elif info == "captcha_code_error":
+        #     text = self.register_page.get_code_error_info().send_keys("value")
         else:
             print("遇到了未知的错误......")
         return text
