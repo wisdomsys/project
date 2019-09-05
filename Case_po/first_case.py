@@ -10,11 +10,9 @@ class FirstCase(unittest.TestCase):
         self.driver.get('http://www.5itest.cn/register')
         self.driver.maximize_window()
         self.register_business = RegisterBusiness(self.driver)
-        print("----前置----")
 
     def tearDown(self) -> None:
         self.driver.close()
-        print("----后置----")
 
     def test_login_email_error(self):
         user_email_error = self.register_business.login_email_error('34', 'user111', '122333', '1233')
@@ -46,10 +44,10 @@ class FirstCase(unittest.TestCase):
 def main():
     first = FirstCase()
     first.test_login_email_error()
-    # first.test_login_username_error()
-    # first.test_login_password_error()
-    # first.test_login_code_error()
-    # first.test_login_success()
+    first.test_login_username_error()
+    first.test_login_password_error()
+    first.test_login_code_error()
+    first.test_login_success()
 
 
 if __name__ == '__main__':
