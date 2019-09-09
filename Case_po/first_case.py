@@ -2,6 +2,8 @@
 from business.register_business import RegisterBusiness
 from selenium import webdriver
 import unittest
+from HTMLTestRunner import HTMLTestRunner
+import os
 
 
 class FirstCase(unittest.TestCase):
@@ -19,19 +21,19 @@ class FirstCase(unittest.TestCase):
         self.assertTrue(user_email_error, "注册失败，此条case执行成功")
 
     # 通过assert判断是否为error
-
     def test_login_username_error(self):
         user_name_error = self.register_business.login_username_error('1232765@gmail.com', 'qw', '12333', '1231')
-        if user_name_error is True:
-            print("注册失败，此条case执行成功")
+        # if user_name_error is True:
+        #     print("注册失败，此条case执行成功")
+        self.assertTrue(user_name_error, "注册失败，此条case执行成功")
 
     def test_login_password_error(self):
-        password_error = self.register_business.login_password_error('12331441@gmail.com', 'joseji21', '123456', '1234')
+        password_error = self.register_business.login_password_error('12331441@gmail.com', 'joseph2111', '123456', '1234')
         if password_error is True:
             print("注册失败，此条case执行成功")
 
     def test_login_code_error(self):
-        code_text_error = self.register_business.login_code_error('12321441@qq.com', 'josep_er', '123345', '1234')
+        code_text_error = self.register_business.login_code_error('12321441@qq.com', 'joseph_beer2', '123345', '1234')
         if code_text_error is True:
             print("注册失败，此条case执行成功")
 
@@ -41,14 +43,21 @@ class FirstCase(unittest.TestCase):
             print("注册成功")
 
 
-def main():
-    first = FirstCase()
-    first.test_login_email_error()
-    first.test_login_username_error()
-    first.test_login_password_error()
-    first.test_login_code_error()
-    first.test_login_success()
+# def main():
+#     first = FirstCase()
+#     first.test_login_email_error()
+#     first.test_login_username_error()
+#     first.test_login_password_error()
+#     first.test_login_code_error()
+#     first.test_login_success()
 
-
+suite = unittest.TestSuite()
+suite.addTest(FirstCase('test_login_email_error'))
 if __name__ == '__main__':
-    unittest.main()
+    file_path = os.path.join(os.getcwd() + "/report/" + "first_case.html")
+    f = open(file_path, "wb")
+    # unittest.main()
+    # unittest.TextTestRunner().run(suite)
+    runner = HTMLTestRunner.HTMLTestRunner(stream=f, title="this is first_report", description=u"这是我们第一次测试报告",
+                                           verbosity=2)
+    runner.run(suite)

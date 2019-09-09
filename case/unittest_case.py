@@ -1,4 +1,9 @@
 import unittest
+from HTMLTestRunner import HTMLTestRunner
+
+
+class UnittestCase(object):
+    pass
 
 
 class UnittestCase(unittest.TestCase):
@@ -29,13 +34,23 @@ class UnittestCase(unittest.TestCase):
         print("这是第3条case")
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     # unittest.main()
     # 创建unittest的容器
     suite = unittest.TestSuite()
     # 添加测试用例到容器
-    suite.addTest(UnittestCase("test_case002"))
-    suite.addTest(UnittestCase("test_case001"))
-    suite.addTest(UnittestCase("test_case003"))
+    # suite.addTest(UnittestCase("test_case002"))
+    # suite.addTest(UnittestCase("test_case001"))
+    # suite.addTest(UnittestCase("test_case003"))
     # 执行容器里的测试用例
-    unittest.TextTestRunner().run(suite)
+    # unittest.TextTestRunner().run(suite)
+
+
+if __name__ == '__main__':
+    #定义报告存放路径
+    suite = unittest.TestSuite()
+    suite.addTest(UnittestCase("test_case001"))
+    fp = open('./report/result.html', 'wb')
+    runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'百度搜索测试报告',description=u'用例执行情况：')
+    runner.run(suite)
+    fp.close()
