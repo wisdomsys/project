@@ -53,6 +53,7 @@ class FirstCase(unittest.TestCase):
 
 suite = unittest.TestSuite()
 suite.addTest(FirstCase('test_login_email_error'))
+
 if __name__ == '__main__':
     file_path = os.path.join(os.getcwd() + "/report/" + "first_case.html")
     f = open(file_path, "wb")
