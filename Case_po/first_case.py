@@ -27,15 +27,16 @@ class FirstCase(unittest.TestCase):
         #     print("注册失败，此条case执行成功")
         self.assertTrue(user_name_error, "注册失败，此条case执行成功")
 
-    def test_login_password_error(self):
-        password_error = self.register_business.login_password_error('12331441@gmail.com', 'joseph2111', '123456', '1234')
-        if password_error is True:
-            print("注册失败，此条case执行成功")
+    # def test_login_password_error(self):
+    #     password_error = self.register_business.login_password_error('12331441@gmail.com', 'joseph2111', '123456',
+    #                                                                  '1234')
+    #     if password_error is True:
+    #         print("注册失败，此条case执行成功")
 
-    def test_login_code_error(self):
-        code_text_error = self.register_business.login_code_error('12321441@qq.com', 'joseph_beer2', '123345', '1234')
-        if code_text_error is True:
-            print("注册失败，此条case执行成功")
+    # def test_login_code_error(self):
+    #     code_text_error = self.register_business.login_code_error('12321441@qq.com', 'joseph_beer2', '123345', '1234')
+    #     if code_text_error is True:
+    #         print("注册失败，此条case执行成功")
 
     def test_login_success(self):
         success = self.register_business.user_base('123@qq.com', 'joseph_beer', '111111', '1234')
@@ -51,11 +52,11 @@ class FirstCase(unittest.TestCase):
 #     first.test_login_code_error()
 #     first.test_login_success()
 
-suite = unittest.TestSuite()
-suite.addTest(FirstCase('test_login_email_error'))
 
 if __name__ == '__main__':
-    file_path = os.path.join(os.getcwd() + "/report/" + "first_case.html")
+    suite = unittest.TestSuite()
+    suite.addTest(FirstCase('test_login_email_error'))
+    file_path = os.path.join(os.getcwd() + "first_case.html")
     f = open(file_path, "wb")
     # unittest.main()
     # unittest.TextTestRunner().run(suite)
